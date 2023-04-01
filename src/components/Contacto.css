@@ -1,0 +1,50 @@
+.contacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 100px;
+    align-items: center;
+    height: 700px;
+}
+
+.contacto-container{
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.map{
+    height: 650px;
+}
+
+.contacto-title{
+    color: black;
+    font-size: 41px;
+    font-family: Poppins;
+    text-align: center;
+    margin: 0;
+}
+
+.contacto-subtitle{
+    color: #890000;
+    font-size: 41px;
+    font-family: Poppins;
+    text-align: center;
+    margin: 0;
+}
+
+.contacto-centro{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Poppins;
+    text-align: center;
+}
+
+.contacto-address{
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Poppins;
+    text-align: center;
+}
