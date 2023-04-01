@@ -57,12 +57,11 @@
   border: 1px white solid;
 }
 
-
-
-@media(max-width: 480px){
-  .hero-container{
+@media (max-width: 480px) {
+  .hero-container {
     height: 100vh;
-    background-position: center, center;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
   .hero-section {
     display: flex;
