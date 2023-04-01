@@ -44,4 +44,11 @@
   .qs-container {
     height: 900px;
   }
+
+  .qs-section h1 {
+    color: #6d0000;
+    font-size: 40px;
+    font-family: Poppins;
+    text-align: center;
+  }
 }

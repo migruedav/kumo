@@ -1,4 +1,4 @@
-body{
+body {
   font-family: Poppins;
 }
 
@@ -75,4 +75,8 @@ body{
     margin-left: 0px;
     padding: 60px;
   }
+  .hero-section h1 {
+  font-size: 40px;}
+  .hero-section h3 {
+  font-size: 20px;}
 }
