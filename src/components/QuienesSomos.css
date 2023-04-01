@@ -38,3 +38,10 @@
 .qs-image img {
   width: 70%;
 }
+
+
+@media(max-width: 480px){
+  .qs-container {
+    height: 900px;
+  }
+}
