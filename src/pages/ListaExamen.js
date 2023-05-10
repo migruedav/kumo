@@ -16,7 +16,8 @@ function ListaExamen() {
         .select("*")
         .order("fecha", { ascending: true })
         .order("hora", { ascending: true })
-        .order("grado", { ascending: true });
+        .order("grado", { ascending: true })
+        .order("nombre", { ascending: true });
       if (error) console.log(error);
       else setData(data);
     }
@@ -47,7 +48,7 @@ function ListaExamen() {
         onClick={() => {
           navigate("/examen");
         }}
-        className="h-10 w-10 bg-black text-white flex justify-center items-center rounded-full font-extrabold fixed bottom-10 left-1/2"
+        className="h-14 w-14 bg-black text-white flex justify-center items-center rounded-full font-extrabold fixed top-10 right-5 border-2 border-white"
       >
         X
       </button>

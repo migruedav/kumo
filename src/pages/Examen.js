@@ -34,8 +34,8 @@ function Examen() {
 
   return (
     <>
-      <div className="m-5">
-        <div className="flex flex-col justify-center items-center bg-gray-300 w-full py-20 rounded-3xl shadow-xl shadow-black/70">
+      <div className="m-5 flex justify-center">
+        <div className="flex flex-col justify-center items-center bg-gray-300 w-full py-20 rounded-3xl shadow-xl shadow-black/70 max-w-xl">
           <form>
             <h1 className="text-center font-bold">INSCRIPCIÓN EXAMEN</h1>
             <label className="flex flex-col text-center my-4">
