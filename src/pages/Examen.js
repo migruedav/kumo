@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import supabase from "../supabaseClient";
+import { useNavigate } from "react-router-dom";
 
 function Examen() {
+
+  const navigate = useNavigate();
+
   const [nombre, setNombre] = useState("");
   const [colegio, setColegio] = useState("Ciudad de México");
   const [grado, setGrado] = useState("10 kyu");
@@ -21,7 +25,10 @@ function Examen() {
         },
       ]);
     if (error) console.log(error);
-    else alert("Examen registrado con éxito");
+    else {
+      alert("Examen registrado con éxito");
+      navigate("/examen");
+    }
   };
 
   return (
