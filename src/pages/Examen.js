@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 import supabase from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
+import {IoListCircleSharp} from "react-icons/io5";
 
 function Examen() {
-
   const navigate = useNavigate();
 
   const [nombre, setNombre] = useState("");
   const [colegio, setColegio] = useState("Ciudad de México");
   const [grado, setGrado] = useState("10 kyu");
-  const [fecha, setFecha] = useState(new Date('2023-05-27'));
+  const [fecha, setFecha] = useState(new Date("2023-05-27"));
   const [hora, setHora] = useState(9);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { data, error } = await supabase
-      .from("examen")
-      .insert([
-        {
-          nombre: nombre,
-          colegio: colegio,
-          grado: grado,
-          fecha: fecha,
-          hora: hora,
-        },
-      ]);
+    const { data, error } = await supabase.from("examen").insert([
+      {
+        nombre: nombre,
+        colegio: colegio,
+        grado: grado,
+        fecha: fecha,
+        hora: hora,
+      },
+    ]);
     if (error) console.log(error);
     else {
       navigate("/listaexamen");
@@ -83,16 +81,15 @@ function Examen() {
               <select
                 className="rounded-full text-center my-1 h-10"
                 onChange={(e) => {
-                  setFecha(e.target.value.slice(0,10));
-                  setHora(parseInt(e.target.value.slice(11,12),10));
-
+                  setFecha(e.target.value.slice(0, 10));
+                  setHora(parseInt(e.target.value.slice(11, 12), 10));
                 }}
                 type="date"
               >
-                <option value='2023-05-27T9:00'>Sábado 27 Mayo 9:00</option>
-                <option value='2023-06-01T3:20'>Jueves 01 Junio 3:20</option>
-                <option value='2023-06-01T4:45'>Jueves 01 Junio 4:45</option>
-                <option value='2023-06-03T9:00'>Sábado 03 Junio 9:00</option>
+                <option value="2023-05-27T9:00">Sábado 27 Mayo 9:00</option>
+                <option value="2023-06-01T3:20">Jueves 01 Junio 3:20</option>
+                <option value="2023-06-01T4:45">Jueves 01 Junio 4:45</option>
+                <option value="2023-06-03T9:00">Sábado 03 Junio 9:00</option>
               </select>
             </label>
             <div className="w-full flex justify-center items-center">
@@ -105,6 +102,14 @@ function Examen() {
               </button>
             </div>
           </form>
+          <button
+            onClick={() => {
+              navigate("/listaexamen");
+            }}
+            className="h-14 w-14 bg-black text-white flex justify-center items-center rounded-full font-extrabold fixed bottom-10 right-auto border-2 border-white"
+          >
+            <IoListCircleSharp size={30} />
+          </button>
         </div>
       </div>
     </>

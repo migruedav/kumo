@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
+import {AiFillCloseCircle} from "react-icons/ai";
 
 function ListaExamen() {
   //VARIABLES
@@ -50,7 +51,7 @@ function ListaExamen() {
         }}
         className="h-14 w-14 bg-black text-white flex justify-center items-center rounded-full font-extrabold fixed top-10 right-5 border-2 border-white"
       >
-        X
+        <AiFillCloseCircle className="text-2xl" />
       </button>
     </>
   );
