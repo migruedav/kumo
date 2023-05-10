@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
-import {AiFillCloseCircle} from "react-icons/ai";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 function ListaExamen() {
   //VARIABLES
@@ -27,19 +27,19 @@ function ListaExamen() {
 
   //RETURN
   return (
-    <>
+    <div className="flex flex-col gap-4 my-4">
       {data.map((examen) => (
         <div
           key={examen.id}
           className="flex flex-row justify-center items-center h-10 my-2"
         >
-          <div className="bg-black text-white w-1/6 rounded-l-full text-center flex items-center justify-center h-10">
+          <div className="bg-black text-white w-1/6 rounded-l-full text-center flex items-center justify-center h-16">
             {examen.fecha.slice(8, 10)}-{examen.hora}
           </div>
-          <div className="bg-gray-600 text-white w-3/6 h-10 flex items-center justify-center">
-            {examen.nombre.slice(0, 20)}
+          <div className="bg-gray-600 text-white text-center w-3/6 h-16 flex items-center justify-center">
+            {examen.nombre}
           </div>
-          <div className="bg-black text-white h-10 rounded-r-full w-1/6 flex justify-center items-center">
+          <div className="bg-black text-white h-16 rounded-r-full w-1/6 flex justify-center items-center">
             {examen.grado}
           </div>
         </div>
@@ -53,7 +53,7 @@ function ListaExamen() {
       >
         <AiFillCloseCircle className="text-2xl" />
       </button>
-    </>
+    </div>
   );
 }
 
