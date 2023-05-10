@@ -49,7 +49,7 @@ function ListaExamen() {
         onClick={() => {
           navigate("/examen");
         }}
-        className="h-14 w-14 bg-black text-white flex justify-center items-center rounded-full font-extrabold fixed top-10 right-5 border-2 border-white"
+        className="h-14 w-14 bg-black text-white flex justify-center items-center rounded-full font-extrabold fixed top-10 right-7 border-2 border-white"
       >
         <AiFillCloseCircle className="text-2xl" />
       </button>
