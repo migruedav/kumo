@@ -1,19 +1,18 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Hero from "./components/Hero";
-import QuienesSomos from "./components/QuienesSomos";
-import Programas from "./components/Programas";
-import Contacto from "./components/Contacto";
+import Home from "./pages/Home";
+import Examen from "./pages/Examen";
+import {Route, BrowserRouter, Routes} from "react-router-dom";
 
 
 function App() {
   return (
-    <div>
-      <Hero />
-      <QuienesSomos />
-      <Programas />
-      <Contacto />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/examen" element={<Examen />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
