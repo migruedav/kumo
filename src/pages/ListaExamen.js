@@ -5,6 +5,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import DelModal from "../components/DelModal";
 
 function ListaExamen() {
+  
   //VARIABLES
   const [data, setData] = useState([]);
   const navigate = useNavigate();
