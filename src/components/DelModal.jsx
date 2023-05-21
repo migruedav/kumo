@@ -19,7 +19,7 @@ function DelModal({ nombre, id, setShowModal }) {
 
   return (
     <div className="flex justify-center items-center w-screen h-screen bg-black/80 fixed inset-0">
-      <div className="flex justify-center flex-col items-center w-8/12 h-96 bg-white rounded-3xl">
+      <div className="flex justify-center flex-col items-center w-10/12 h-96 bg-white rounded-3xl">
         <h1>Borrar de la lista a</h1>
         <p>{nombre}</p>
         <div className="flex flex-row gap-10 my-10">
