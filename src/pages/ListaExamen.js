@@ -5,7 +5,6 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import DelModal from "../components/DelModal";
 
 function ListaExamen() {
-  
   //VARIABLES
   const [data, setData] = useState([]);
   const navigate = useNavigate();
@@ -48,9 +47,9 @@ function ListaExamen() {
           </div>
           <div
             onClick={() => {
-              setShowModal(true),
-                setNombreAlumno(examen.nombre),
-                setId(examen.id);
+              setShowModal(true);
+              setNombreAlumno(examen.nombre);
+              setId(examen.id);
             }}
             className="bg-gray-600 text-white text-center w-3/6 h-16 px-4 flex items-center justify-center"
           >
