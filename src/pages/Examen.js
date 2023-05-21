@@ -74,6 +74,7 @@ function Examen() {
                 <option value="2 kyu">2 kyu</option>
                 <option value="1 kyu">1 kyu</option>
                 <option value="CN">CN</option>
+                <option value="CN2">CN 2 Dan</option>
               </select>
             </label>
             <label className="flex flex-col text-center my-4">
