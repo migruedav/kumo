@@ -22,7 +22,7 @@ function DelModal({ nombre, id, setShowModal }) {
       <div className="flex justify-center flex-col items-center w-8/12 h-96 bg-white rounded-3xl">
         <h1>Borrar de la lista a</h1>
         <p>{nombre}</p>
-        <div className="flex flex-row gap-20 my-10">
+        <div className="flex flex-row gap-10 my-10">
           <button
             onClick={() => {
               delExamen(id);
