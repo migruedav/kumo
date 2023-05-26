@@ -47,7 +47,7 @@ function ListaExamen() {
           </div>
           <div
             onClick={() => {
-              setShowModal(true);
+              setShowModal(false);
               setNombreAlumno(examen.nombre);
               setId(examen.id);
             }}
