@@ -11,7 +11,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/examen" element={<Examen />} />
         <Route path="/listaexamen" element={<ListaExamen />} />
       </Routes>
     </BrowserRouter>
@@ -19,3 +18,5 @@ function App() {
 }
 
 export default App;
+
+//<Route path="/examen" element={<Examen />} />
