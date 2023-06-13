@@ -9,8 +9,8 @@ function Examen() {
   const [nombre, setNombre] = useState("");
   const [colegio, setColegio] = useState("Kumo");
   const [grado, setGrado] = useState("10 kyu");
-  const [fecha, setFecha] = useState(new Date("2023-05-27"));
-  const [hora, setHora] = useState(9);
+  const [fecha, setFecha] = useState(new Date("2023-06-17"));
+  const [hora, setHora] = useState(8);
   const [alumnos, setAlumnos] = useState([]);
 
   const retrieveData = async () => {
@@ -45,7 +45,7 @@ function Examen() {
       navigate("/listaexamen");
     }
   };
-
+   console.log(fecha);
   return (
     <>
       <div className="m-5 flex justify-center">
