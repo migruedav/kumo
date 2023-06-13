@@ -75,7 +75,7 @@ function Examen() {
                 onChange={(e) => setNombre(e.target.value)}
               />
             </label>
-            <label className="flex flex-col text-center my-4">
+            {/*<label className="flex flex-col text-center my-4">
               Colegio:
               <select
                 name="colegio"
@@ -86,7 +86,7 @@ function Examen() {
                 <option value="Ciudad de México">Ciudad de México</option>
                 <option value="Moderno Tepeyac">Moderno Tepeyac</option>
               </select>
-            </label>
+                </label>*/}
             <label className="flex flex-col text-center my-4">
               Grado:
               <select
@@ -125,9 +125,9 @@ function Examen() {
                 }}
                 type="date"
               >
-                <option value="2023-06-17T8:00">Sábado 17 Junio 8:00</option>
-                <option value="2023-06-17T9:30">Sábado 17 Junio 9:30</option>
-                <option value="2023-06-17T10:45">Sábado 17 Junio 10:45</option>
+                <option value="2023-06-17T8:00">8:00</option>
+                <option value="2023-06-17T9:30">9:30</option>
+                <option value="2023-06-17T10:45">10:45</option>
               </select>
             </label>
             <div className="w-full flex justify-center items-center">
