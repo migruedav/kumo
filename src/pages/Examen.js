@@ -1,16 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import supabase from "../supabaseClient";
 import { useNavigate } from "react-router-dom";
-import {IoListCircleSharp} from "react-icons/io5";
+import { IoListCircleSharp } from "react-icons/io5";
 
 function Examen() {
   const navigate = useNavigate();
 
   const [nombre, setNombre] = useState("");
-  const [colegio, setColegio] = useState("Ciudad de México");
+  const [colegio, setColegio] = useState("Kumo");
   const [grado, setGrado] = useState("10 kyu");
   const [fecha, setFecha] = useState(new Date("2023-05-27"));
   const [hora, setHora] = useState(9);
+  const [alumnos, setAlumnos] = useState([]);
+
+  const retrieveData = async () => {
+    const { data, error } = await supabase
+      .from("alumnos")
+      .select("nombre")
+      .order("nombre", { ascending: true });
+    if (error) console.log(error);
+    else {
+      setAlumnos(data);
+    }
+  };
+
+  useEffect(() => {
+    retrieveData();
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,6 +46,8 @@ function Examen() {
     }
   };
 
+  console.log(nombre);
+
   return (
     <>
       <div className="m-5 flex justify-center">
@@ -38,6 +56,18 @@ function Examen() {
             <h1 className="text-center font-bold">INSCRIPCIÓN EXAMEN</h1>
             <label className="flex flex-col text-center my-4">
               Nombre del alumno:
+              <select
+                name="nombredelalumno"
+                className="rounded-full text-center my-1 h-10"
+                onChange={(e) => setNombre(e.target.value)}
+              >
+                <option value="None" key="">Alumno</option>
+                {alumnos.map((alumno, index) => (
+                  <option key={index} value={alumno.nombre}>
+                    {alumno.nombre}
+                  </option>
+                ))}
+              </select>
               <input
                 type="text"
                 name="nombre"
@@ -52,6 +82,7 @@ function Examen() {
                 className="rounded-full text-center my-1 h-10"
                 onChange={(e) => setColegio(e.target.value)}
               >
+                <option value="Kumo">Kumo Karate Do</option>
                 <option value="Ciudad de México">Ciudad de México</option>
                 <option value="Moderno Tepeyac">Moderno Tepeyac</option>
               </select>
@@ -75,6 +106,13 @@ function Examen() {
                 <option value="1 kyu">1 kyu</option>
                 <option value="CN">CN</option>
                 <option value="CN2">CN 2 Dan</option>
+                <option value="6 kyu Pre">6 kyu Prekarate</option>
+                <option value="5 kyu Pre">5 kyu Prekarate</option>
+                <option value="4 kyu Pre">4 kyu Prekarate</option>
+                <option value="3 kyu Pre">3 kyu Prekarate</option>
+                <option value="2 kyu Pre">2 kyu Prekarate</option>
+                <option value="1 kyu Pre">1 kyu Prekarate</option>
+
               </select>
             </label>
             <label className="flex flex-col text-center my-4">
@@ -87,10 +125,9 @@ function Examen() {
                 }}
                 type="date"
               >
-                <option value="2023-05-27T9:00">Sábado 27 Mayo 9:00</option>
-                <option value="2023-06-01T3:20">Jueves 01 Junio 3:20</option>
-                <option value="2023-06-01T4:45">Jueves 01 Junio 4:45</option>
-                <option value="2023-06-03T9:00">Sábado 03 Junio 9:00</option>
+                <option value="2023-06-17T8:00">Sábado 17 Junio 8:00</option>
+                <option value="2023-06-17T9:30">Sábado 17 Junio 9:30</option>
+                <option value="2023-06-17T10:45">Sábado 17 Junio 10:45</option>
               </select>
             </label>
             <div className="w-full flex justify-center items-center">

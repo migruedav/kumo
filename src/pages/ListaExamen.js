@@ -18,6 +18,7 @@ function ListaExamen() {
     const { data, error } = await supabase
       .from("examen")
       .select("*")
+      .eq("colegio", "Kumo")
       .order("fecha", { ascending: true })
       .order("hora", { ascending: true })
       .order("grado", { ascending: true })
@@ -47,7 +48,7 @@ function ListaExamen() {
           </div>
           <div
             onClick={() => {
-              setShowModal(false);
+              setShowModal(true);
               setNombreAlumno(examen.nombre);
               setId(examen.id);
             }}
