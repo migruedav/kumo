@@ -46,8 +46,6 @@ function Examen() {
     }
   };
 
-  console.log(nombre);
-
   return (
     <>
       <div className="m-5 flex justify-center">
